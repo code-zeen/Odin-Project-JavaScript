@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let userName = prompt("Enter Username", "")
+
+        // if (userName == "Admin") {
+        //     let password = prompt("Enter Password", "")
+
+        //     if (password == "TheMaster") {
+        //         alert("Welcome!")
+        //     } else if (password == "" || password === null) {
+        //         alert("Canceled")
+        //     } else {
+        //         alert("Wrong password")
+        //     }
+
+        // } else if (userName === "" || userName === null) {
+        //     alert("Canceled")
+        // } else {
+        //     alert("I don't know you")
+        // }
+
+
+        let login = prompt("Enter Username" + "Answer: ((Admin))")
+
+        let usr = "Admin" // Admin
+        let pwd = "TheMaster" // Password
+
+        if (login == false || login == null) { // Empty field || Cancel or ESC
+            alert("Canceled")
+        }  else if (login != usr) { // wrong username
+            alert("I don't know you")
+        } else { // login == usr
+            login = prompt("Enter Password" + "Answer: ((TheMaster))")
+            
+            if (login == false || login == null) { // Empty field || Cancel or ESC
+                alert("Canceled")
+            } else {
+                login == pwd ? alert("Welcome") : alert("Wrong password")
+            }
+        }
+    </script>
+</body>
+</html>
