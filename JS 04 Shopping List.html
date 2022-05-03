@@ -1,37 +1,66 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping list example</title>
-    <style>
-      li {
-        margin-bottom: 10px;
-      }
 
-      li button {
-        font-size: 8px;
-        margin-left: 20px;
-        color: #666;
-      }
-    </style>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping list example</title>
+  <style>
+    li {
+      margin-bottom: 10px;
+    }
 
-    <h1>My shopping list</h1>
+    li button {
+      font-size: 8px;
+      margin-left: 20px;
+      color: #666;
+    }
+  </style>
+</head>
 
-    <div>
-      <label for="item">Enter a new item:</label>
-      <input type="text" name="item" id="item">
-      <button>Add item</button>
-    </div>
+<body>
 
-    <ul>
+  <h1>My shopping list</h1>
 
-    </ul>
+  <div>
+    <label for="item">Enter a new item:</label>
+    <input type="text" name="item" id="item">
+    <button>Add item</button>
+  </div>
 
-    <script>
+  <ul>
 
-    </script>
-  </body>
+  </ul>
+
+  <script>
+    const
+      ul = document.querySelector('ul'),
+      inp = document.querySelector('input'),
+      btn = document.querySelector('button');
+
+    btn.addEventListener('click', addList);
+
+    function addList() {
+      const newItem = inp.value;
+      inp.value = '';
+
+      const
+        listItem = document.createElement('li'),
+        spanItem = document.createElement('span'),
+        deleteBtn = document.createElement('button');
+
+      listItem.appendChild(spanItem);
+      spanItem.textContent = newItem;
+      listItem.appendChild(deleteBtn);
+      deleteBtn.textContent = 'Delete';
+
+      ul.appendChild(listItem);
+
+      deleteBtn.addEventListener('click', () => ul.removeChild(listItem));
+
+      inp.focus();
+    };
+  </script>
+</body>
+
 </html>
